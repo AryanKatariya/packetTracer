@@ -1,0 +1,23 @@
+vlan 10
+name A
+int range fa0/1-6
+switchport mode access
+switchport access vlan 10			sh vlan breif
+						sh int trunk
+
+
+++++++++++++++Inter vlan+++++++++
+
+In switch create vlan
+Switch(config)#vlan 20
+Switch(config-vlan)#name B
+Switch(config-vlan)#int range fa0/6-9
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switch access vlan 20
+
+In router
+Router(config)#int fa0/0.20
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip address 192.168.2.1 255.255.255.0
+
+

@@ -1,0 +1,2 @@
+sh ip ospf neighbor
+sh ip ospf database

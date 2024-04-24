@@ -1,0 +1,11 @@
+aaa new-model
+username aryan secret 5 aryan
+aaa authentication login default group tacacs+ local
+tacacs-server host 192.168.0.1 key xyz
+
+line vty 0 6
+login authentication default
+enable password 321
+
+aaa authorization exec default group tacacs+
+aaa authorization exec default group tacacs+ local

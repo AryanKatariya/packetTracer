@@ -1,0 +1,23 @@
+STATIC NAT:
+show ip interface brief
+1.ip nat inside source static 192.168.30.2 10.0.0.3
+2.int fa0/0
+3.ip nat inside
+4.int se0/1/0
+5.ip nat outside
+6.ip route 0.0.0.0 0.0.0.0 Se0/1/0
+
+DYNAMIC NAT:
+1.access-list 10 permit 192.168.30.0 0.0.0.255
+2.ip nat pool ditiss 10.0.0.4 10.0.0.6 netmask 255.255.255.0
+3.ip nat inside source list 10 pool ditiss
+4.ip route 0.0.0.0 0.0.0.0 Se0/1/0
+5.do show ip nat tra
+
+PAT:
+1.access-list 10 permit 192.168.30.0 0.0.0.255
+2.ip nat pool ditiss 10.0.0.4 10.0.0.4 netmask 255.255.255.0
+3.ip nat inside source list 10 pool ditiss overload
+4.ip route 0.0.0.0 0.0.0.0 Se0/1/0
+5.do show ip nat tra
+

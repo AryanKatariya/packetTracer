@@ -1,0 +1,16 @@
+MAIN ROUTER
+	Router(config)#ip dhcp pool F
+	Router(dhcp-config)#network 192.168.1.0 255.255.255.0
+	Router(dhcp-config)#default-router 192.168.1.1
+	Router(dhcp-config)#exit
+	Router(config)#do sh run | in dhcp
+	ip dhcp pool ditiss
+	ip dhcp pool B
+	ip dhcp pool C
+	ip dhcp pool D
+	ip dhcp pool E
+	ip dhcp pool F
+
+REQUESTING ROUTER
+	Router(config-if)#int fa0/1
+	Router(config-if)#ip helper-address 192.168.8.2

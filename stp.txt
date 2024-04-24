@@ -1,0 +1,8 @@
+show spanning-tree active
+show spanning-tree summary
+
+Any two switch
+Switch(config)#spanning-tree mode rapid-pvst
+
+ROOT SWITCH
+spanning-tree vlan 1 root primary

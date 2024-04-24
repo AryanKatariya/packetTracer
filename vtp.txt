@@ -1,0 +1,28 @@
+IN SERVER SWITCH
+Switch(config)#vtp mode server
+Switch(config)#vtp domain aryan.com
+Changing VTP domain name from NULL to aryan.com
+Switch(config)#vtp password aryan
+Setting device VLAN database password to aryan
+Switch(config)#vtp version 2
+Switch(config)#vlan 10
+Switch(config-vlan)#name aryan
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#name ashu
+Switch(config-vlan)#
+Switch(config-vlan)#exit
+Switch(config)#do sh vlan
+
+IN CLIENT SWITCH
+
+Switch(config)#vtp mode
+Switch(config)#vtp mode cli
+Switch(config)#vtp mode client 
+Setting device to VTP CLIENT mode.
+Switch(config)#vtp domain aryan.com
+Domain name already set to aryan.com.
+Switch(config)#vtp password aryan
+Setting device VLAN database password to aryan
+Switch(config)#vtp version 2
+Cannot modify version in VTP client mode
+Switch(config)#do sh vlan
